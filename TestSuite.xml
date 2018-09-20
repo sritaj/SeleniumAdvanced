@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+  <test name="Regression1">
+    <classes>
+      <class name="samplescripts.SampleScript1"/>
+      <class name="samplescripts.SampleScript2"/>
+      <class name="samplescripts.SampleScript3"/>
+      <class name="samplescripts.SampleScript4"/>
+    </classes>
+  </test>
+
+ <listeners>
+    <listener class-name="frameworks.SeleniumListeners" ></listener>
+  </listeners>
+</suite>
