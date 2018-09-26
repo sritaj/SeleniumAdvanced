@@ -30,7 +30,7 @@ public class SQLConnector {
     	Connection con = DriverManager.getConnection(dbUrl,username,password);
   
   		//Create Statement Object		
-	    Statement stmt = con.createStatement();					
+	    Statement stmt = con.createStatement();		
 
 		// Execute the SQL Query. Store results in ResultSet		
  		ResultSet rs= stmt.executeQuery(query);			
@@ -61,7 +61,35 @@ public class SQLConnector {
  		stmt.executeUpdate(query);			
 	}
 	
-	public void UpdateDataInDB() {
+	public void updateDataInDB(String query) throws ClassNotFoundException, SQLException {
+		
+		 //Load mysql jdbc driver		
+   	    Class.forName("com.mysql.cj.jdbc.Driver");			
+   
+   		//Create Connection to DB		
+    	Connection con = DriverManager.getConnection(dbUrl,username,password);
+  
+  		//Create Statement Object		
+	    Statement stmt = con.createStatement();		
+	    
+		// Execute the SQL Query. Store results in ResultSet		
+ 		stmt.executeUpdate(query);	
+		
+	}
+	
+	public void deleteDataFromDB(String query) throws ClassNotFoundException, SQLException {
+		
+		 //Load mysql jdbc driver		
+  	    Class.forName("com.mysql.cj.jdbc.Driver");			
+  
+  		//Create Connection to DB		
+   	Connection con = DriverManager.getConnection(dbUrl,username,password);
+ 
+ 		//Create Statement Object		
+	    Statement stmt = con.createStatement();	
+
+		// Execute the SQL Query. Store results in ResultSet		
+		stmt.executeUpdate(query);	
 		
 	}
 
